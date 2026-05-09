@@ -1,4 +1,4 @@
-import { AppShell, Burger } from "@mantine/core";
+import { AppShell, Burger, Group, Title } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Outlet } from "react-router-dom";
 import "./App.css";
@@ -11,7 +11,7 @@ export default function App() {
   return (
     <AppShell
       padding="sm"
-      header={{ height: 60 }}
+      header={{ height: 70 }}
       navbar={{
         width: 200,
         breakpoint: "sm",
@@ -19,8 +19,11 @@ export default function App() {
       }}
     >
       <AppShell.Header>
-        <Burger opened={opened} onClick={toggle} />
-        <ToggleColorScheme />
+        <Group justify="space-between" p="sm">
+          <Burger opened={opened} onClick={toggle} />
+          <Title order={1}>T-Minus</Title>
+          <ToggleColorScheme />
+        </Group>
       </AppShell.Header>
 
       <AppShell.Navbar>
