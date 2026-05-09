@@ -16,20 +16,26 @@ export default function LaunchItems({ launchData }: LaunchItemsProps) {
         {launch.name} - Flight #{launch.flight_number} [
         {format(new Date(launch.date_utc), "yyyy-MM-dd")}]
       </Accordion.Control>
-      <Accordion.Panel>Rocket ID: {launch.rocket}</Accordion.Panel>
+      {launch.rocket && <Accordion.Panel>Rocket ID: {launch.rocket}</Accordion.Panel>}
       {launch.details && <Accordion.Panel>Details: {launch.details}.</Accordion.Panel>}
       {launch.links && (
         <Accordion.Panel>
           <Group>
-            <Anchor href={launch.links.webcast ?? ""} target="_blank">
-              Webcast
-            </Anchor>
-            <Anchor href={launch.links.article ?? ""} target="_blank">
-              Article
-            </Anchor>
-            <Anchor href={launch.links.wikipedia ?? ""} target="_blank">
-              Wikipedia
-            </Anchor>
+            {launch.links.webcast && (
+              <Anchor href={launch.links.webcast} target="_blank">
+                Webcast
+              </Anchor>
+            )}
+            {launch.links.article && (
+              <Anchor href={launch.links.article} target="_blank">
+                Article
+              </Anchor>
+            )}
+            {launch.links.wikipedia && (
+              <Anchor href={launch.links.wikipedia} target="_blank">
+                Wikipedia
+              </Anchor>
+            )}
           </Group>
         </Accordion.Panel>
       )}
