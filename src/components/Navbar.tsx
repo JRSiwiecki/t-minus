@@ -16,6 +16,7 @@ export default function Navbar() {
         label="Home"
         leftSection={<HouseSimpleIcon size={ICON_SIZE} />}
         active={path === "/"}
+        color="yellow"
       />
       <NavLink
         component={Link}
@@ -23,6 +24,7 @@ export default function Navbar() {
         label="Launch List"
         leftSection={<RocketLaunchIcon size={ICON_SIZE} />}
         active={path === "/launch-list"}
+        color="yellow"
       />
     </>
   );
