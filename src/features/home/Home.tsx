@@ -1,3 +1,9 @@
+import { Title } from "@mantine/core";
+
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <>
+      <Title order={2}>Home</Title>
+    </>
+  );
 }

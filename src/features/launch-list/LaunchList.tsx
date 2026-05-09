@@ -1,7 +1,9 @@
+import { Title } from "@mantine/core";
+
 export default function LaunchList() {
   return (
     <>
-      <div>Launch List</div>
+      <Title order={2}>Launch List</Title>
     </>
   );
 }
