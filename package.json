@@ -14,6 +14,8 @@
     "fmt:check": "oxfmt --check"
   },
   "dependencies": {
+    "@mantine/core": "^9.1.1",
+    "@mantine/hooks": "^9.1.1",
     "@tanstack/react-query": "^5.100.9",
     "immer": "^11.1.8",
     "react": "^19.2.5",
@@ -39,6 +41,9 @@
     "nano-staged": "^1.0.2",
     "oxfmt": "^0.48.0",
     "oxlint": "^1.63.0",
+    "postcss": "^8.5.14",
+    "postcss-preset-mantine": "^1.18.0",
+    "postcss-simple-vars": "^7.0.1",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.58.2",
     "vite": "^8.0.10",
