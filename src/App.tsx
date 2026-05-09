@@ -13,7 +13,7 @@ export default function App() {
       padding="sm"
       header={{ height: 70 }}
       navbar={{
-        width: 200,
+        width: 175,
         breakpoint: "sm",
         collapsed: { desktop: !opened, mobile: !opened },
       }}
