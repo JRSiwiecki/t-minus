@@ -5,7 +5,7 @@ const BASE_PATH = "/v5";
 const BASE_URL = BASE_HOST + BASE_PATH;
 
 export const getLaunchList = async () => {
-  const url = BASE_URL + "/launches/latest";
+  const url = BASE_URL + "/launches";
 
   try {
     const response = await fetch(url);
