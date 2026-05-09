@@ -17,6 +17,8 @@ export default function LaunchList() {
     );
   }
 
+  launchData?.sort((a, b) => new Date(b.date_utc).getTime() - new Date(a.date_utc).getTime());
+
   return (
     <Stack align="center">
       <Title order={2}>Launch List</Title>
