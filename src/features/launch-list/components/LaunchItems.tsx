@@ -13,11 +13,10 @@ export default function LaunchItems({ launchData }: LaunchItemsProps) {
       <Accordion.Control
         icon={launch.success ? <CheckIcon color="green" /> : <XIcon color="red" />}
       >
-        {launch.name} [{format(new Date(launch.date_utc), "yyyy-MM-dd")}]
+        {launch.name} - Flight #{launch.flight_number} [
+        {format(new Date(launch.date_utc), "yyyy-MM-dd")}]
       </Accordion.Control>
-      <Accordion.Panel>
-        Flight #{launch.flight_number} - Rocket ID: {launch.rocket}
-      </Accordion.Panel>
+      <Accordion.Panel>Rocket ID: {launch.rocket}</Accordion.Panel>
       {launch.details && <Accordion.Panel>Details: {launch.details}.</Accordion.Panel>}
       {launch.links && (
         <Accordion.Panel>
