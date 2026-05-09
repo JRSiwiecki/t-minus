@@ -1,75 +1,41 @@
-# React + TypeScript + Vite
+# T-Minus 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A SpaceX launch tracker built for fun and learning. Browse past and upcoming missions, search and filter launches, and watch a live countdown to the next one.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What it does
 
-## React Compiler
+- Lists all SpaceX launches with mission patch, rocket name, date, and status
+- Live countdown timer for upcoming launches
+- Search launches by name
+- Filter by mission outcome (success / failure)
+- Click any launch to see details — mission description, webcast link, Wikipedia page
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Built with
 
-Note: This will impact Vite dev & build performances.
+- [React](https://react.dev/)
+- [SpaceX API (v4)](https://github.com/r-spacex/SpaceX-API) — free, public, no key required
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Install dependencies
+yarn install --frozen-lockfile
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Start the dev server
+yarn run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project status
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This is a v1 focused on the core launch tracking experience. Planned for later (maybe):
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Filter by rocket (Falcon 9, Starship, etc.)
+- Separate upcoming launches view
+- Mission photo gallery
+- Crew profiles and rocket detail pages
+
+## Disclaimer
+
+Not affiliated with or endorsed by SpaceX in any way. Launch data sourced from the community-maintained [r-spacex/SpaceX-API](https://github.com/r-spacex/SpaceX-API).
