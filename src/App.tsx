@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 
 import "./App.css";
 import { Outlet } from "react-router-dom";
+import ToggleColorScheme from "./components/ToggleColorScheme";
 
 export default function App() {
   const [opened, { toggle }] = useDisclosure();
@@ -20,6 +21,7 @@ export default function App() {
     >
       <AppShell.Header>
         <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+        <ToggleColorScheme />
       </AppShell.Header>
 
       <AppShell.Navbar>
