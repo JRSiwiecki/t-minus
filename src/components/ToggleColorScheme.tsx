@@ -1,14 +1,24 @@
 import { Button, useMantineColorScheme } from "@mantine/core";
 import { MoonIcon, SunIcon } from "@phosphor-icons/react";
 
+const ICON_SIZE = 20;
+
 export default function ToggleColorScheme() {
   const { colorScheme, setColorScheme } = useMantineColorScheme();
 
   const isDarkMode = colorScheme === "dark";
 
   return (
-    <Button onClick={() => (isDarkMode ? setColorScheme("light") : setColorScheme("dark"))}>
-      {isDarkMode ? <SunIcon /> : <MoonIcon />}
+    <Button
+      variant="outline"
+      color={isDarkMode ? "yellow" : "blue"}
+      onClick={() => (isDarkMode ? setColorScheme("light") : setColorScheme("dark"))}
+    >
+      {isDarkMode ? (
+        <SunIcon size={ICON_SIZE} color="yellow" />
+      ) : (
+        <MoonIcon size={ICON_SIZE} color="blue" />
+      )}
     </Button>
   );
 }
