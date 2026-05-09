@@ -2,6 +2,8 @@ import { Accordion, Alert, Skeleton, Stack, Title } from "@mantine/core";
 import { useGetLaunchList } from "./hooks/useGetLaunchList";
 import { InfoIcon } from "@phosphor-icons/react";
 
+import LaunchItems from "./components/LaunchItems";
+
 export default function LaunchList() {
   const { data: launchData, isError, isLoading } = useGetLaunchList();
 
@@ -15,20 +17,13 @@ export default function LaunchList() {
     );
   }
 
-  const launchItems = launchData?.map((launch) => (
-    <Accordion.Item key={launch.id} value={launch.name}>
-      <Accordion.Control>{launch.name}</Accordion.Control>
-      <Accordion.Panel>{launch.rocket}</Accordion.Panel>
-    </Accordion.Item>
-  ));
-
   return (
     <Stack align="center">
       <Title order={2}>Launch List</Title>
       <Skeleton height={1000} w="97%" m="sm" visible={isLoading}>
         <Stack>
-          <Accordion order={3} defaultValue="Launch">
-            {launchItems}
+          <Accordion order={3} defaultValue="Launch" variant="contained">
+            <LaunchItems launchData={launchData ?? []} />
           </Accordion>
         </Stack>
       </Skeleton>
