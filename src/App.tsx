@@ -14,7 +14,7 @@ export default function App() {
       header={{ height: 70 }}
       navbar={{
         width: 175,
-        breakpoint: "sm",
+        breakpoint: "xs",
         collapsed: { desktop: !opened, mobile: !opened },
       }}
     >
