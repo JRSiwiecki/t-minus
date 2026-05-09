@@ -1,9 +1,10 @@
 import { NavLink } from "@mantine/core";
-import { RocketLaunchIcon } from "@phosphor-icons/react";
+import { HouseSimpleIcon, RocketLaunchIcon } from "@phosphor-icons/react";
 
 export default function Navbar() {
   return (
     <>
+      <NavLink href="/" label="Home" leftSection={<HouseSimpleIcon size={20} />} />
       <NavLink
         href="/launch-list"
         label="Launch List"
