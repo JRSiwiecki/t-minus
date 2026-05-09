@@ -16,7 +16,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
-        <MantineProvider>
+        <MantineProvider defaultColorScheme="dark">
           <Routes>
             <Route path="/" element={<App />}>
               <Route index element={<Home />} />
