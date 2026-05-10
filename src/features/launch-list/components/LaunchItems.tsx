@@ -1,6 +1,6 @@
-import { Accordion, Anchor, Group, Image } from "@mantine/core";
+import { Accordion, Anchor, Badge, Group, Image } from "@mantine/core";
 import type { Launch } from "../types/launch";
-import { CheckIcon, XIcon } from "@phosphor-icons/react";
+
 import { format } from "date-fns";
 
 interface LaunchItemsProps {
@@ -11,7 +11,9 @@ export default function LaunchItems({ launchData }: LaunchItemsProps) {
   return launchData?.map((launch) => (
     <Accordion.Item key={launch.id} value={launch.name}>
       <Accordion.Control
-        icon={launch.success ? <CheckIcon color="green" /> : <XIcon color="red" />}
+        icon={
+          launch.success ? <Badge color="green">Success</Badge> : <Badge color="red">Failure</Badge>
+        }
       >
         <Group>
           <Image radius="md" src={launch.links.patch.small} h={50} w="auto" fit="contain" />
