@@ -1,7 +1,8 @@
-import { Accordion, Anchor, Badge, Group, Image, Title } from "@mantine/core";
+import { Accordion, Anchor, Badge, Group, Image, Text, Title } from "@mantine/core";
 import type { Launch } from "../types/launch";
 
 import { format } from "date-fns";
+import { ArrowElbowDownRightIcon } from "@phosphor-icons/react";
 
 interface LaunchItemsProps {
   launchData: Launch[];
@@ -25,6 +26,16 @@ export default function LaunchItems({ launchData }: LaunchItemsProps) {
       </Accordion.Control>
       {launch.rocket && <Accordion.Panel>Rocket ID: {launch.rocket}</Accordion.Panel>}
       {launch.details && <Accordion.Panel>Details: {launch.details}.</Accordion.Panel>}
+      {launch.failures && (
+        <Accordion.Panel>
+          {launch.failures.map((failure) => (
+            <Text ml="md">
+              <ArrowElbowDownRightIcon size={20} style={{ marginRight: "5px" }} />
+              {failure.reason} at T={failure.time} with altitude {failure.altitude}km
+            </Text>
+          ))}
+        </Accordion.Panel>
+      )}
       {launch.links && (
         <Accordion.Panel>
           <Group>
