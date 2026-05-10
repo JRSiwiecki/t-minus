@@ -8,14 +8,16 @@ interface LaunchItemsProps {
   launchData: Launch[];
 }
 
+const determineLaunchBadge = (launch: Launch) => {
+  if (launch.upcoming) return <Badge color="blue">Upcoming</Badge>;
+  if (launch.success) return <Badge color="green">Success</Badge>;
+  else return <Badge color="red">Failure</Badge>;
+};
+
 export default function LaunchItems({ launchData }: LaunchItemsProps) {
   return launchData?.map((launch) => (
     <Accordion.Item key={launch.id} value={launch.name}>
-      <Accordion.Control
-        icon={
-          launch.success ? <Badge color="green">Success</Badge> : <Badge color="red">Failure</Badge>
-        }
-      >
+      <Accordion.Control icon={determineLaunchBadge(launch)}>
         <Group>
           <Image radius="md" src={launch.links.patch.small} h={50} w="auto" fit="contain" />
           <Title order={3}>
