@@ -1,4 +1,4 @@
-import { Accordion, Anchor, Badge, Group, Image } from "@mantine/core";
+import { Accordion, Anchor, Badge, Group, Image, Title } from "@mantine/core";
 import type { Launch } from "../types/launch";
 
 import { format } from "date-fns";
@@ -17,8 +17,10 @@ export default function LaunchItems({ launchData }: LaunchItemsProps) {
       >
         <Group>
           <Image radius="md" src={launch.links.patch.small} h={50} w="auto" fit="contain" />
-          {launch.name} - Flight #{launch.flight_number} [
-          {format(new Date(launch.date_utc), "yyyy-MM-dd")}]
+          <Title order={3}>
+            {launch.name} - Flight #{launch.flight_number} [
+            {format(new Date(launch.date_utc), "yyyy-MM-dd")}]
+          </Title>
         </Group>
       </Accordion.Control>
       {launch.rocket && <Accordion.Panel>Rocket ID: {launch.rocket}</Accordion.Panel>}
